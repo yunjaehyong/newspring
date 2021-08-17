@@ -25,6 +25,20 @@ public class YjhController {
 	@Autowired
 	YjhService yjhService;
 	
+	
+	@RequestMapping("/index")
+	public String index(HttpServletRequest req) {
+		
+		return "index";
+	}
+	
+	@RequestMapping("/include/top")
+	public String top(HttpServletRequest req) {
+		
+		return "/include/top";
+	}
+	
+	
 	@RequestMapping("yjh")
 	public String yjh(HttpServletRequest req) {
 		

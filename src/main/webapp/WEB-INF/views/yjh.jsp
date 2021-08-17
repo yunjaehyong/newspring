@@ -1,30 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<jsp:include page="/WEB-INF/views/include/side.jsp" />
+	<jsp:include page="/WEB-INF/views/include/top.jsp" />
 <html>
 <script
 	src="${pageContext.request.contextPath}/resources/js1/jquery-3.5.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js1/common.js"></script>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/side.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<div>
+	<div class="container">
 			<table border="1">
+			
 				<tr>
 					<th>INX</th>
-					<th>¾ÆÀÌµğ</th>
-					<th>ÆĞ½º¿öµå</th>
-					<th>ÀÌ¸§</th>
-					<th>Á¦¸ñ</th>
-					<th>³»¿ë</th>
-					<th>ÀÛ¼º½Ã°£</th>
+					<th>ì•„ì´ë””</th>
+					<th>íŒ¨ìŠ¤ì›Œë“œ</th>
+					<th>ì´ë¦„</th>
+					<th>ì œëª©</th>
+					<th>ë‚´ìš©</th>
+					<th>ì‘ì„±ì‹œê°„</th>
 				</tr>
 				<tbody>
 					<c:forEach var="yjh" items="${yjhlist}">
@@ -47,10 +46,7 @@
 			</form>
 
 		</div>
-		<button type="button" onclick="GoInsert()">µî·Ï</button>
-	</div>
-
-
+		<button type="button" onclick="GoInsert()">ë“±ë¡</button>
 
 </body>
 
@@ -58,7 +54,7 @@
 
 function GoInsert(){
 	
-	console.log("ÀÌµ¿");
+	console.log("ì´ë™");
 	location.href = "/swempire/insert"
 	
 	
