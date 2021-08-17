@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.kr.swempire.yjh.dao.YjhDAO">
+<select id="selectTest" resultType="co.kr.swempire.yjh.vo.YjhVO">
+	select * 
+	 from crud
+</select>
+
+
+<insert id="insertTest" parameterType="co.kr.swempire.yjh.vo.YjhVO">
+	insert 
+	into 
+	crud 
+	(
+	id,
+	pw,
+	user_name,
+	title,
+	board_context,
+	to_date
+	)
+
+	values
+	(
+	#{id},
+	#{pw},
+	#{user_name},
+	#{title},
+	#{board_context},
+	NOW()
+	)
+</insert>
+
+<select id="insertData" parameterType="co.kr.swempire.yjh.vo.YjhVO" >
+		insert 
+	into 
+	crud 
+	(id,
+	pw,
+	user_name,
+	title,
+	board_context,
+	to_date
+	)
+
+	values
+	(
+	#{id},
+	#{pw},
+	#{user_name},
+	#{title},
+	#{board_context},
+	NOW()
+	)
+
+</select>
+
+<select id="updateTest" resultType="hashmap">
+	select * from crud
+	where rate = #{rate}
+
+</select>
+
+<update id="updateData" parameterType="hashmap">
+	update crud 
+	 set
+	id=#{id},
+	pw=#{pw},
+	user_name=#{user_name},
+	title=#{title},
+	board_context=#{board_context},
+	to_date=NOW()
+	
+	where 
+	rate=#{rate}
+
+</update>
+
+<delete id="deleteData" parameterType="hashmap">
+	delete from crud
+	where rate=${rate}
+</delete>
+</mapper>
