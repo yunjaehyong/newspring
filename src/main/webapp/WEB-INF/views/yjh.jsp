@@ -14,32 +14,32 @@
 </head>
 <body>
 	<div class="container">
-			<table border="1">
-			
-				<tr>
-					<th>INX</th>
-					<th>아이디</th>
-					<th>패스워드</th>
-					<th>이름</th>
-					<th>제목</th>
-					<th>내용</th>
-					<th>작성시간</th>
-				</tr>
-				<tbody>
-					<c:forEach var="yjh" items="${yjhlist}">
+<table class="type09">
+  <thead>
+  <tr>
+    <th scope="cols">INX</th>
+    <th scope="cols">아이디</th>
+    <th scope="cols">패스워드</th>
+    <th scope="cols">이름</th>
+    <th scope="cols">제목</th>
+    <th scope="cols">내용</th>
+    <th scope="cols">작성시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="test" items="${testList}">
 						<tr>
-							<td>${yjh.rate}</td>
-							<td onclick="Goupdate(${yjh.rate})">${yjh.id}</td>
-							<td>${yjh.pw}</td>
-							<td>${yjh.user_name}</td>
-							<td>${yjh.title}</td>
-							<td>${yjh.board_context}</td>
-							<td><fmt:formatDate value="${yjh.to_date}"
+							<td>${test.board_num}</td>
+							<td onclick="Goupdate(${test.board_num})">${test.id}</td>
+							<td>${test.pw}</td>
+							<td>${test.user_name}</td>
+							<td>${test.title}</td>
+							<td>${test.board_context}</td>
+							<td><fmt:formatDate value="${test.cre_date}"
 									pattern="yyyy-MM-dd HH:mm:ss" /></td>
-					</c:forEach>
-				</tbody>
-			</table>
-
+  </tbody>
+</table>
+		
 			<form name="Form">
 				<input type="hidden" name="cmd" value="openPop" />
 				 <input type="hidden" name="rate" />
@@ -47,6 +47,7 @@
 
 		</div>
 		<button type="button" onclick="GoInsert()">등록</button>
+
 
 </body>
 

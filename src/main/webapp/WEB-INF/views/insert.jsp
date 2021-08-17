@@ -7,6 +7,8 @@
 <title>등록</title>
 <script src="${pageContext.request.contextPath}/resources/js1/jquery-3.5.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js1/common.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+<jsp:include page="/WEB-INF/views/include/top.jsp" />
 <%
 request.setCharacterEncoding("utf-8");
 String cp = request.getContextPath();
@@ -20,10 +22,9 @@ String cp = request.getContextPath();
 <div id ="wrap">
 	<div id="container">
 		<div id="inner">
-			<h1>insert</h1>
+			<h1>게시판 입력</h1>
 			<form id="form1" name="form1">
 				<table width="100%" class="table2">
-				<caption><span class="t_red">*</span>표시는 필수입력 항목입니다.</caption>
 					<tbody id="id">
 						<tr>
 							<th>아이디</th>
