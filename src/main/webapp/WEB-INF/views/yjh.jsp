@@ -14,7 +14,7 @@
 <body>
 	<div>
 		<div>
-			<table border="3">
+			<table border="1">
 				<tr>
 					<th>INX</th>
 					<th>¾ÆÀÌµð</th>
