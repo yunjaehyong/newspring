@@ -13,7 +13,7 @@
 <h1>업무기록 게시판</h1>
 <nav role="navigation">
   <ul id="main-menu">
-    <li><a href="#">일간리스트</a></li>
+    <li><a href="${pageContext.request.contextPath}/index">일간리스트</a></li>
     <li><a href="#">주간리스트</a>
       <ul id="sub-menu">
         <li><a href="${pageContext.request.contextPath}/yjh" aria-label="subemnu">1번프로젝트</a></li>
