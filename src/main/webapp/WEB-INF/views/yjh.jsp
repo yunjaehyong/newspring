@@ -2,11 +2,13 @@
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<jsp:include page="/WEB-INF/views/include/side.jsp" />
 <html>
 <script
 	src="${pageContext.request.contextPath}/resources/js1/jquery-3.5.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js1/common.js"></script>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/side.css">
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
