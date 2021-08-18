@@ -2,6 +2,7 @@ table.type09 {
   border-collapse: collapse;
   text-align: left;
   line-height: 1.5;
+  width : 1000px;
 
 }
 table.type09 thead th {

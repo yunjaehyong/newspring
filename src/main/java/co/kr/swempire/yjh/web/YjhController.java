@@ -31,6 +31,17 @@ public class YjhController {
 		
 		return "index";
 	}
+	@RequestMapping("/index2")
+	public String index2(HttpServletRequest req) {
+		YjhVO vo = new YjhVO();
+		
+	List<YjhVO> list = yjhService.index2();
+	vo.getRate();
+	
+	req.setAttribute("yjhlist", list);
+		
+		return "index2";
+	}
 	
 	@RequestMapping("/include/top")
 	public String top(HttpServletRequest req) {

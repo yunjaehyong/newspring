@@ -22,4 +22,5 @@ public interface YjhDAO {
 	
 	public Integer deleteData(Map<String,Object>map);
 	
+	List<YjhVO> index2();
 }
