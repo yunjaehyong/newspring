@@ -51,26 +51,6 @@ public class YjhController {
 	
 	
 	@RequestMapping("yjh")
-<<<<<<< HEAD
-	public String yjh(HttpServletRequest req,HttpSession session, Model model) {
-	
-		
-		Integer rate = Integer.parseInt(req.getParameter("rate"));
-		YjhVO vo = new YjhVO();
-		vo.setId(req.getParameter("id"));
-		vo.setPw(req.getParameter("pw"));
-		vo.setUser_name(req.getParameter("user_name"));
-		vo.setTitle(req.getParameter("title"));
-		vo.setBoard_context(req.getParameter("board_context"));
-		req.getParameter("rate");
-		vo.setRate(rate);
-		
-		Map<Object,Object> list = yjhService.selectList(vo);
-		model.addAttribute("yjhlist",list);
-		
-		req.setAttribute("yjhlist", list);
-		System.out.println(list);
-=======
 	public String selectTest(HttpServletRequest req, HttpSession session, Model model){
 		int rate = Integer.parseInt(req.getParameter("rate"));
 		YjhVO vo = new YjhVO();
@@ -80,7 +60,6 @@ public class YjhController {
 		vo.setRate(rate);
 		Map<Object,Object> list = yjhService.updateTest(vo);
 		model.addAttribute("test",list);
->>>>>>> 63a59ab54bc5dacc9b96b88bbff489da922cd754
 		return "yjh";
 		
 	}
@@ -160,11 +139,5 @@ public class YjhController {
 		params.put("msg","수정이완료되었습니다.");
 		
 		return params;
-	}
-	
-	@RequestMapping("/selectLaunch")
-	public String selectLaunch(HttpServletRequest req) {
-		
-		return "selectLaunch";
 	}
 }
