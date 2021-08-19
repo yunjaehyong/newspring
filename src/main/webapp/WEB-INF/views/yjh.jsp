@@ -13,10 +13,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+<form name="form" id=form method="post">
+>>>>>>> 63a59ab54bc5dacc9b96b88bbff489da922cd754
 	<div class="container">
 	<form id="form2" name="form2" method="post">
 <table class="type09">
+<<<<<<< HEAD
 
 					<tbody id="id">
 					<input type="hidden" name = "rate" value = "${yjhlist.rate}">
@@ -56,11 +61,49 @@
 			</form>
 
 
+=======
+  <thead>
+  <tr>
+    <th scope="cols">INX</th>
+    <th scope="cols">아이디</th>
+    <th scope="cols">패스워드</th>
+    <th scope="cols">이름</th>
+    <th scope="cols">제목</th>
+    <th scope="cols">내용</th>
+    <th scope="cols">작성시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  		<tr>
+  			<td>${test.rate}</td>
+  			<td>${test.id}</td>
+  			<td>${test.pw}</td>
+  			<td>${test.user_name}</td>
+  			<td>${test.title}</td>
+  			<td>${test.board_context}</td>
+  			<td><fmt:formatDate value="${test.to_date}"
+									pattern="yyyy-MM-dd HH:mm:ss" /></td>
+  </tbody>
+</table>
+		
+				<input type="hidden" name="cmd" value="openPop" />
+				<input type="hidden" name="rate" />
+				
+			
+		
+		<div class="btn">	
+			<button type="button" onClick="Goupdate(${test.rate})" style="position: relative; left:-4px;">수정</button>
+			<button type="button" onClick="deleteData()" style="position: relative; left:-4px;">삭제</button>
+		</div>
+		</div>
+	</form>
+>>>>>>> 63a59ab54bc5dacc9b96b88bbff489da922cd754
 </body>
 
 <script type="text/javascript">
 
 
+<<<<<<< HEAD
 function updateData() {
 
 
@@ -91,24 +134,36 @@ function updateData() {
 					alert(result.msg);
 				}
 			});
+=======
+function Goupdate(seq) {
+	
+	var myForm = document.form;
+	var url = "${pageContext.request.contextPath}/update";
+	myForm.action = url;
+ 	myForm.method = 'post'; 
+	myForm.rate.value = seq;
+	myForm.submit();
+	
+		
+>>>>>>> 63a59ab54bc5dacc9b96b88bbff489da922cd754
 }
+
 function deleteData(){
 
-	alert("삭제되었습니다.")
-	history.back();
+	
 	
 	$
 	.ajax({
 		url : "${pageContext.request.contextPath}/deleteDataAjax",
 		type : 'post',
 		dataType : 'json',
-		data : $('#form2').serialize(),
+		data : $('#form').serialize(),
 		success : function(result) {
 			if (result.result) {
 				console.log("성공");
 
 			} else {
-				alert('실패');
+				alert('fail');
 			}
 		},
 		error : function(xhr, textStatus, errorThrown) { 
