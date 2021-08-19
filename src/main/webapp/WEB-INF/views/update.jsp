@@ -26,26 +26,26 @@ String cp = request.getContextPath();
 			<form id="form2" name="form2" method="post">
 				<table width="100%" class="table2">
 					<tbody id="id">
-					<input type="hidden" name = "rate" value = "${yjh.rate}">
+					<input type="hidden" name = "rate" value = "${yjhlist.rate}">
 						<tr>
 							<th>아이디</th>
-							<td><input name="id" tpye="text" value="${yjh.id}" class="tbox01"/></td>
+							<td><input name="id" tpye="text" value="${yjhlist.id}" class="tbox01"/></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td><input name="pw" tpye="text" value="${yjh.pw}"class="tbox01"/></td>
+							<td><input name="pw" tpye="text" value="${yjhlist.pw}"class="tbox01"/></td>
 						</tr>
 						<tr>
 							<th>이름</th>
-							<td><input name="user_name" tpye="text" value="${yjh.user_name}"class="tbox01"/></td>
+							<td><input name="user_name" tpye="text" value="${yjhlist.user_name}"class="tbox01"/></td>
 						</tr>
 						<tr>
 							<th>제목</th>
-							<td><input name="title" tpye="text" value="${yjh.title}"class="tbox01"/></td>
+							<td><input name="title" tpye="text" value="${yjhlist.title}"class="tbox01"/></td>
 						</tr>
 						<tr>
 							<th>내용</th>
-							<td><input tpye="text" name="board_context" value="${yjh.board_context}"cols="10" row="5" class="textarea01"></td>
+							<td><input tpye="text" name="board_context" value="${yjhlist.board_context}"cols="10" row="5" class="textarea01"></td>
 						</tr>	
 					</tbody>
 				</table>
@@ -53,7 +53,7 @@ String cp = request.getContextPath();
 			<div class="btn">
 				<button type="button" class="btn black" onClick="updateData()">입력</button>
 				<button type="button" class="btn black" onClick="closeData()">뒤로</button>
-				<button type = "button" class="btn black" onClick="deleteData()">삭제</button>
+
 				
 			</div>
 		</div>
@@ -137,30 +137,7 @@ function updateData() {
 				}
 			});
 }
-function deleteData(){
 
-	alert("삭제되었습니다.")
-	history.back();
-	
-	$
-	.ajax({
-		url : "${pageContext.request.contextPath}/deleteDataAjax",
-		type : 'post',
-		dataType : 'json',
-		data : $('#form2').serialize(),
-		success : function(result) {
-			if (result.result) {
-				console.log("성공");
-
-			} else {
-				alert('실패');
-			}
-		},
-		error : function(xhr, textStatus, errorThrown) { 
-		}
-		
-	});
-}
 
 
 </script>

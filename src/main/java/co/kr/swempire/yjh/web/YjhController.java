@@ -56,7 +56,8 @@ public class YjhController {
 		YjhVO vo = new YjhVO();
 		
 		List<YjhVO> list = yjhService.selectTest();
-		vo.getRate();
+		
+		
 		
 		req.setAttribute("yjhlist", list);
 		System.out.println(list);
@@ -100,8 +101,8 @@ public class YjhController {
 		req.getParameter("rate");
 		
 		vo.setRate(rate);
-		Map<Object,Object> alist = yjhService.updateTest(vo);
-		model.addAttribute("yjh",alist);
+		Map<Object,Object> list = yjhService.updateTest(vo);
+		model.addAttribute("yjhlist",list);
 		
 		return "/update";
 		

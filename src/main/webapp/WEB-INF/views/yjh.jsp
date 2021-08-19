@@ -29,8 +29,8 @@
   <tbody>
   		<c:forEach var="test" items="${yjhlist}">
 						<tr>
-							<td onclick="goinx(${test.rate})">${test.rate}</td>
-							<td onclick="Goupdate(${test.rate})">${test.id}</td>
+							<td>${test.rate}</td>
+							<td>${test.id}</td>
 							<td>${test.pw}</td>
 							<td>${test.user_name}</td>
 							<td>${test.title}</td>
@@ -48,20 +48,14 @@
 			</form>
 
 		</div>
-		<button type="button" onclick="GoInsert()" style="position: relative; left:-479px;">등록</button>
-
+		<button type="button" onclick="Goupdate()" style="position: relative; left:-479px;">수정</button>
+		<button type = "button" class="btn black" onClick="deleteData()" style="position: relative; left:-479px;">삭제</button>
 
 </body>
 
 <script type="text/javascript">
 
-function GoInsert(){
-	
-	console.log("이동");
-	location.href = "/swempire/insert"
-	
-	
-}
+
 function Goupdate(seq) {
 	
 	var myForm = document.Form;
@@ -73,14 +67,31 @@ function Goupdate(seq) {
 	
 	
 }
-function goinx(seq){
-	var myForm = document.Form;
-	var url = "${pageContext.request.contextPath}/index2";
-	myForm.action = url;
- 	myForm.method = 'post'; 
-	myForm.rate.value = seq;
-	myForm.submit();
+function deleteData(){
+
+	alert("삭제되었습니다.")
+	history.back();
+	
+	$
+	.ajax({
+		url : "${pageContext.request.contextPath}/deleteDataAjax",
+		type : 'post',
+		dataType : 'json',
+		data : $('#form2').serialize(),
+		success : function(result) {
+			if (result.result) {
+				console.log("성공");
+
+			} else {
+				alert('실패');
+			}
+		},
+		error : function(xhr, textStatus, errorThrown) { 
+		}
+		
+	});
 }
+
 
 
 

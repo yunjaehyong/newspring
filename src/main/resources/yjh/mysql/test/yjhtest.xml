@@ -6,6 +6,7 @@
 <select id="selectTest" resultType="co.kr.swempire.yjh.vo.YjhVO">
 	select * 
 	 from crud
+	 where rate=#{rate}
 </select>
 
 

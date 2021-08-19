@@ -26,7 +26,7 @@
   <tbody>
   		<c:forEach var="test" items="${yjhlist}">
 						<tr>
-							<td>${test.rate}</td>
+							<td onclick="goYjh(${test.rate})">${test.rate}</td>
 							<td>${test.user_name}</td>
 							<td>${test.title}</td>
 							<td><fmt:formatDate value="${test.to_date}"
@@ -35,11 +35,33 @@
 			</c:forEach>
   </tbody>
 </table>
+<form name="Form">
+				<input type="hidden" name="cmd" value="openPop" />
+				 <input type="hidden" name="rate" />
+			</form>
 
 		</div>
-
+<button type="button" onclick="GoInsert()" style="position: relative; left:-479px;">등록</button>
 
 </body>
 
+<script type = "text/javascript">
+
+function goYjh(seq){
+	var myForm = document.Form;
+	var url = "${pageContext.request.contextPath}/yjh";
+	myForm.action = url;
+ 	myForm.method = 'post'; 
+	myForm.rate.value = seq;
+	myForm.submit();
+}
+function GoInsert(){
+	
+	console.log("이동");
+	location.href = "/swempire/insert"
+	
+	
+}
+</script>
 
 </html>
