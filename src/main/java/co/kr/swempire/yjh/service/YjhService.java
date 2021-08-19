@@ -47,5 +47,11 @@ public class YjhService {
 		
 		return list;
 	}
+	
+	public Map<Object,Object> DeleteData(YjhVO vo){
+		return yjhDAO.deleteData(vo);
+	}
+	
+	
 
 }

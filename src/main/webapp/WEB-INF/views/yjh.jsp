@@ -17,6 +17,7 @@
 	<form name="form" id=form method="post">
 		<div class="container">
 			<table class="type09">
+			<input type="hidden" name=rate value=${test.rate}>
 				<thead>
 					<tr>
 						<th scope="cols">INX</th>
@@ -73,8 +74,7 @@ function Goupdate(seq) {
 
 function deleteData(){
 
-	
-	
+
 	$
 	.ajax({
 		url : "${pageContext.request.contextPath}/deleteDataAjax",
@@ -83,8 +83,15 @@ function deleteData(){
 		data : $('#form').serialize(),
 		success : function(result) {
 			if (result.result) {
-				console.log("성공");
-
+				
+				if(confirm("삭제?")){
+					console.log("성공");
+				/* 	history.back();return false; */
+					location.href = document.referrer;
+				}
+				
+				
+				
 			} else {
 				alert('fail');
 			}
@@ -93,6 +100,8 @@ function deleteData(){
 		}
 		
 	});
+	
+	
 }
 
 

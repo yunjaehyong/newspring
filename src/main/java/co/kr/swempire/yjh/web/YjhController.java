@@ -128,16 +128,25 @@ public class YjhController {
 	@RequestMapping("/deleteDataAjax")
 	public Map<String, Object> deleteDataAjax(HttpServletRequest req,HttpSession session,Locale locale,
 			@RequestParam Map<String, Object> params){
+		Map<String,Object> rmap = new HashMap<String,Object>();
+		
 		boolean result = false;
+		int rate = Integer.parseInt(req.getParameter("rate"));
+		YjhVO vo = new YjhVO();
 		
-		int a = this.yjhService.deleteData(params);
+		vo.setRate(rate);
 		
-		if(a>0) {
+		int a = yjhService.deleteData(params);
+		
+		if(a > 0) {
 			result = true;
+		}else {
+			rmap.put("msg", "에러");
 		}
-		params.put("result",result );
-		params.put("msg","수정이완료되었습니다.");
-		
-		return params;
+		rmap.put("result", result);
+		return rmap;
 	}
+	
+
+	
 }

@@ -122,10 +122,7 @@ function insertData() {
 				data : $('#form1').serialize(),
 				success : function(result) {
 					if (result.result) {
-						console.log(result);
-						alert(result.msg);
-						alert(result.result);
-						location.reload();
+						location.href = document.referrer;
 
 					} else {
 						alert('실패');

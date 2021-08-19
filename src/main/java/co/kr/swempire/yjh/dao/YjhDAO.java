@@ -25,4 +25,7 @@ public interface YjhDAO {
 	List<YjhVO> index2();
 
 	public Map<Object, Object> selectList(YjhVO vo);
+	
+	
+	public Map<Object,Object> deleteData(YjhVO vo);
 }
