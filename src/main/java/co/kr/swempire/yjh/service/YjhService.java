@@ -20,6 +20,12 @@ public class YjhService {
 		
 		return list;
 	}
+	
+	public Map<Object,Object> selectList(YjhVO vo){
+		return yjhDAO.selectList(vo);
+	}
+	
+	
 	public Integer insertTest(YjhVO vo) {
 		int a = yjhDAO.insertTest(vo);
 		return a;

@@ -32,7 +32,7 @@
     </li>
     <li><a href="#">오늘의 점심</a>
       <ul id="sub-menu">
-        <li><a href="#" aria-label="subemnu">뭘먹을까?</a></li>
+        <li><a href="${pageContext.request.contextPath}/selectLaunch" aria-label="subemnu">뭘먹을까?</a></li>
         <li><a href="#" aria-label="subemnu">submenu</a></li>
         <li><a href="#" aria-label="subemnu">submenu</a></li>
         <li><a href="#" aria-label="subemnu">submenu</a></li>

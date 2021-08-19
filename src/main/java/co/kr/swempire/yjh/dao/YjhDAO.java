@@ -23,4 +23,6 @@ public interface YjhDAO {
 	public Integer deleteData(Map<String,Object>map);
 	
 	List<YjhVO> index2();
+
+	public Map<Object, Object> selectList(YjhVO vo);
 }

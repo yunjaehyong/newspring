@@ -13,59 +13,84 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<div class="container">
+	<form id="form2" name="form2" method="post">
 <table class="type09">
-  <thead>
-  <tr>
-    <th scope="cols">INX</th>
-    <th scope="cols">아이디</th>
-    <th scope="cols">패스워드</th>
-    <th scope="cols">이름</th>
-    <th scope="cols">제목</th>
-    <th scope="cols">내용</th>
-    <th scope="cols">작성시간</th>
-  </tr>
-  </thead>
-  <tbody>
-  		<c:forEach var="test" items="${yjhlist}">
+
+					<tbody id="id">
+					<input type="hidden" name = "rate" value = "${yjhlist.rate}">
+					
 						<tr>
-							<td>${test.rate}</td>
-							<td>${test.id}</td>
-							<td>${test.pw}</td>
-							<td>${test.user_name}</td>
-							<td>${test.title}</td>
-							<td>${test.board_context}</td>
-							<td><fmt:formatDate value="${test.to_date}"
-									pattern="yyyy-MM-dd HH:mm:ss" /></td>
+							<th>아이디</th>
+							<td><input type="text" name="id" value="${yjhlist.id}" > </span></td>
 						</tr>
-			</c:forEach>
-  </tbody>
-</table>
+						<tr>
+							<th>비밀번호</th>
+							<td><input name="pw" tpye="text" value="${yjhlist.pw}"class="tbox01" /></td>
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td><input name="user_name" tpye="text" value="${yjhlist.user_name}"class="tbox01" /></td>
+						</tr>
+						<tr>
+							<th>제목</th>
+							<td><input name="title" tpye="text" value="${yjhlist.title}"class="tbox01" /></td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td><input tpye="text" name="board_context" value="${yjhlist.board_context}"cols="10" row="5" class="textarea01" ></td>
+						</tr>	
+						</form>
+					</tbody>
+				</table>
+		</form>
 		
-			<form name="Form">
+		</div>
+		<button type="button" onclick="updateData()" style="position: relative; left:-479px;">수정</button>
+		<button type = "button" class="btn black" onClick="deleteData()" style="position: relative; left:-479px;">삭제</button>
+
+	<form name="Form">
 				<input type="hidden" name="cmd" value="openPop" />
 				 <input type="hidden" name="rate" />
 			</form>
 
-		</div>
-		<button type="button" onclick="Goupdate()" style="position: relative; left:-479px;">수정</button>
-		<button type = "button" class="btn black" onClick="deleteData()" style="position: relative; left:-479px;">삭제</button>
 
 </body>
 
 <script type="text/javascript">
 
 
-function Goupdate(seq) {
+function updateData() {
+
+
 	
-	var myForm = document.Form;
-	var url = "${pageContext.request.contextPath}/update";
-	myForm.action = url;
- 	myForm.method = 'post'; 
-	myForm.rate.value = seq;
-	myForm.submit();
-	
-	
+	var f = document.form2;
+	var con = confirm("수정하시겠습니까?")
+
+
+	$
+			.ajax({
+				url : "${pageContext.request.contextPath}/updateDataAjax",
+				type : 'post',
+				dataType : 'json',
+				data : $('#form2').serialize(),
+				success : function(result) {
+					if (result.result) {
+						if(con){
+							alert("수정되었습니다.")
+							history.back(); return false;
+						}
+
+					} else {
+						alert('실패');
+					}
+				},
+				error : function(xhr, textStatus, errorThrown) { 
+
+					alert(result.msg);
+				}
+			});
 }
 function deleteData(){
 
