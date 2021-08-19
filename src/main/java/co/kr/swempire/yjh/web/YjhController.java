@@ -51,16 +51,15 @@ public class YjhController {
 	
 	
 	@RequestMapping("yjh")
-	public String yjh(HttpServletRequest req) {
-		
+	public String selectTest(HttpServletRequest req, HttpSession session, Model model){
+		int rate = Integer.parseInt(req.getParameter("rate"));
 		YjhVO vo = new YjhVO();
+		session=req.getSession();
+		req.getParameter("rate");
 		
-		List<YjhVO> list = yjhService.selectTest();
-		
-		
-		
-		req.setAttribute("yjhlist", list);
-		System.out.println(list);
+		vo.setRate(rate);
+		Map<Object,Object> list = yjhService.updateTest(vo);
+		model.addAttribute("test",list);
 		return "yjh";
 		
 	}
@@ -129,7 +128,6 @@ public class YjhController {
 	@RequestMapping("/deleteDataAjax")
 	public Map<String, Object> deleteDataAjax(HttpServletRequest req,HttpSession session,Locale locale,
 			@RequestParam Map<String, Object> params){
-		YjhVO vo = new YjhVO();
 		boolean result = false;
 		
 		int a = this.yjhService.deleteData(params);

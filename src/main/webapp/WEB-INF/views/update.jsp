@@ -73,47 +73,9 @@ function closeData(){
 function updateData() {
 
 
+	var a = confirm("수정하시겠습니까?")
 	
-	var f = document.form2;
-	if (!f.id.value) {
-
-		alert("id를 입력하세요");
-		f.id.focus();
-		return;
-
-	}
-
-	if (!f.pw.value) {
-
-		alert("pw");
-		f.pw.focus();
-		return;
-
-	}
-
-	if (!f.user_name.value) {
-
-		alert("이름");
-		f.user_name.focus();
-		return;
-
-	}
-
-	if (!f.title.value) {
-
-		alert("제목");
-		f.title.focus();
-		return;
-
-	}
-
-	if (!f.board_context.value) {
-
-		alert("내용 입력하세요");
-		f.board_context.focus();
-		return;
-
-	}
+	
 
 
 	$
@@ -124,8 +86,9 @@ function updateData() {
 				data : $('#form2').serialize(),
 				success : function(result) {
 					if (result.result) {
-						console.log("성공");
-						location.reload();
+						if(a){
+							history.back();return false;
+						}
 
 					} else {
 						alert('실패');

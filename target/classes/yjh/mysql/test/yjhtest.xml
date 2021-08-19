@@ -6,7 +6,7 @@
 <select id="selectTest" resultType="co.kr.swempire.yjh.vo.YjhVO">
 	select * 
 	 from crud
-	 where rate=#{rate}
+	 where rate = #{rate}
 </select>
 
 
@@ -81,7 +81,7 @@
 
 <delete id="deleteData" parameterType="hashmap">
 	delete from crud
-	where rate=${rate}
+	where rate= #{rate}
 </delete>
 
 <select id="index2" resultType = "co.kr.swempire.yjh.vo.YjhVO">
