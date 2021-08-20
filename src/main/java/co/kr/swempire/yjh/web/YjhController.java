@@ -46,16 +46,16 @@ public class YjhController {
 		
 		return "index";
 	}
-	@RequestMapping("/index2")
-	public String index2(HttpServletRequest req) {
+	@RequestMapping("/readlist")
+	public String readList(HttpServletRequest req) {
 		YjhVO vo = new YjhVO();
 		
-	List<YjhVO> list = yjhService.index2();
+	List<YjhVO> list = yjhService.readList();
 	vo.getRate();
 	
 	req.setAttribute("yjhlist", list);
 		
-		return "index2";
+		return "readlist";
 	}
 	
 	@RequestMapping("/include/top")
@@ -65,7 +65,7 @@ public class YjhController {
 	}
 	
 	
-	@RequestMapping("yjh")
+	@RequestMapping("selectpage")
 	public String selectTest(HttpServletRequest req, HttpSession session, Model model){
 		int rate = Integer.parseInt(req.getParameter("rate"));
 		YjhVO vo = new YjhVO();
@@ -75,15 +75,15 @@ public class YjhController {
 		vo.setRate(rate);
 		Map<Object,Object> list = yjhService.updateTest(vo);
 		model.addAttribute("test",list);
-		return "yjh";
+		return "selectpage";
 		
 	}
-	@RequestMapping("/insert")
+	@RequestMapping("/insertpage")
 	public String insertTest(HttpServletRequest req) {
 		
 		YjhVO vo = new YjhVO();
 		
-		return "insert";
+		return "insertpage";
 	}
 	@ResponseBody
 	@RequestMapping("/insertDataAjax")
@@ -107,7 +107,7 @@ public class YjhController {
 		
 		return map1;
 	}
-	@RequestMapping( value= "/update", method= {RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping( value= "/updatepage", method= {RequestMethod.POST,RequestMethod.GET})
 	public String updateTest(HttpServletRequest req, HttpSession session, Model model){
 		int rate = Integer.parseInt(req.getParameter("rate"));
 		YjhVO vo = new YjhVO();
@@ -118,7 +118,7 @@ public class YjhController {
 		Map<Object,Object> list = yjhService.updateTest(vo);
 		model.addAttribute("yjhlist",list);
 		
-		return "/update";
+		return "/updatepage";
 		
 	}
 	@ResponseBody

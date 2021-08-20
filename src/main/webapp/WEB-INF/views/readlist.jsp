@@ -26,7 +26,7 @@
   <tbody>
   		<c:forEach var="test" items="${yjhlist}">
 						<tr>
-							<td onclick="goYjh(${test.rate})">${test.rate}</td>
+							<td onclick="goselectpage(${test.rate})">${test.rate}</td>
 							<td>${test.user_name}</td>
 							<td>${test.title}</td>
 							<td><fmt:formatDate value="${test.to_date}"
@@ -62,9 +62,9 @@
 
 <script type = "text/javascript">
 
-function goYjh(seq){
+function goselectpage(seq){
 	var myForm = document.Form;
-	var url = "${pageContext.request.contextPath}/yjh";
+	var url = "${pageContext.request.contextPath}/selectpage";
 	myForm.action = url;
  	myForm.method = 'post'; 
 	myForm.rate.value = seq;
@@ -73,7 +73,7 @@ function goYjh(seq){
 function GoInsert(){
 	
 	console.log("이동");
-	location.href = "/swempire/insert"
+	location.href = "/swempire/insertpage"
 	
 	
 }

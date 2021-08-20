@@ -92,7 +92,7 @@
 </update>
 
 
-<select id="index2" resultType = "co.kr.swempire.yjh.vo.YjhVO">
+<select id="readList" resultType = "co.kr.swempire.yjh.vo.YjhVO">
 select rate,user_name,title,to_date from crud
 
 </select>

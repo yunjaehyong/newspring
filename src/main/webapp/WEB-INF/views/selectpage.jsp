@@ -48,7 +48,7 @@
 
 
 			<div class="btn">
-				<button type="button" onClick="Goupdate(${test.rate})"
+				<button type="button" onClick="Goupdatepage(${test.rate})"
 					style="position: relative; left: -4px;">수정</button>
 				<button type="button" onClick="deleteData()"
 					style="position: relative; left: -4px;">삭제</button>
@@ -64,10 +64,10 @@
 <script type="text/javascript">
 
 
-function Goupdate(seq) {
+function Goupdatepage(seq) {
 	
 	var myForm = document.form;
-	var url = "${pageContext.request.contextPath}/update";
+	var url = "${pageContext.request.contextPath}/updatepage";
 	myForm.action = url;
  	myForm.method = 'post'; 
 	myForm.rate.value = seq;

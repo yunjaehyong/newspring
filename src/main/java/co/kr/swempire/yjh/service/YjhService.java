@@ -42,8 +42,8 @@ public class YjhService {
 	public Integer deleteData(Map<String,Object>map) {
 		return this.yjhDAO.deleteData(map);
 	}
-	public List<YjhVO>index2(){
-		List<YjhVO> list = yjhDAO.index2();
+	public List<YjhVO>readList(){
+		List<YjhVO> list = yjhDAO.readList();
 		
 		return list;
 	}
