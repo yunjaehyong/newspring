@@ -43,6 +43,21 @@
 		</div>
 <button type="button" onclick="GoInsert()" style="position: relative; left:-479px;">등록</button>
 
+
+
+<form action="common/upload" method="post" enctype="multipart/form-data">
+		  <table>
+		    <tr>
+		      <td>Select File</td>
+		      <td><input type="file" name="uploadFile" /></td>
+		      <td>
+		        <button type="submit">Upload</button>
+		      </td>
+		    </tr>
+		  </table>
+		</form>
+
+
 </body>
 
 <script type = "text/javascript">

@@ -23,6 +23,9 @@
 	
 	<context:component-scan base-package="co.kr.swempire" />
 	
+	<!--  spring-upload -->
+<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+<!--  spring-upload -->
 	
 	
 </beans:beans>

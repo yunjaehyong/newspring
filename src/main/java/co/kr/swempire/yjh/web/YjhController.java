@@ -1,9 +1,16 @@
 package co.kr.swempire.yjh.web;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
+
+
+
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.sun.istack.internal.logging.Logger;
 
 import co.kr.swempire.yjh.service.YjhService;
 import co.kr.swempire.yjh.vo.YjhVO;
@@ -22,6 +33,10 @@ import co.kr.swempire.yjh.vo.YjhVO;
 @Controller
 public class YjhController {
 
+	
+	private static final String FILE_SERVER_PATH = "D:/upload";
+	
+	
 	@Autowired
 	YjhService yjhService;
 	
@@ -146,6 +161,10 @@ public class YjhController {
 		rmap.put("result", result);
 		return rmap;
 	}
+	
+
+
+	
 	
 
 	
