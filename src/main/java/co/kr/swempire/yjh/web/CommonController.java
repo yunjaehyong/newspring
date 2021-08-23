@@ -26,6 +26,19 @@ public class CommonController{
 			model.addAttribute("msg", "Please select a valid mediaFile..");
 		}
 		
-		return "/index2";
+		return "/readlist";
+	}
+	
+	private static final String FILE_SERVER_PATH1 = "D:/upload";
+
+	@RequestMapping("/download")
+	public ModelAndView download(@RequestParam HashMap<Object, Object> params, ModelAndView mv) {
+		String fileName = (String) params.get("fileName");
+		String fullPath = FILE_SERVER_PATH1 + "/" + fileName;
+		File file = new File(fullPath);
+		
+		mv.setViewName("fileDownload");
+		mv.addObject("fileDownload", file);
+		return mv;
 	}
 }

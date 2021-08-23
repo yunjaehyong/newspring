@@ -1,9 +1,13 @@
-<%@page import="java.net.URLEncoder"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+	<jsp:include page="/WEB-INF/views/include/top.jsp" />
 <html>
+<script
+	src="${pageContext.request.contextPath}/resources/js1/jquery-3.5.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js1/common.js"></script>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="">

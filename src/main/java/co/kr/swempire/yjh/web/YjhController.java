@@ -46,6 +46,16 @@ public class YjhController {
 		
 		return "index";
 	}
+	@RequestMapping("/fileupload")
+	public String flieupload(HttpServletRequest req) {
+		
+		return "fileupload";
+	}
+	@RequestMapping("/filedownload")
+	public String filedownload(HttpServletRequest req) {
+		
+		return "filedownload";
+	}
 	@RequestMapping("/readlist")
 	public String readList(HttpServletRequest req) {
 		YjhVO vo = new YjhVO();

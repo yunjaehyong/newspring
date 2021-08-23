@@ -45,7 +45,7 @@
 
 
 
-<form action="common/upload" method="post" enctype="multipart/form-data">
+<!-- <form action="common/upload" method="post" enctype="multipart/form-data">
 		  <table>
 		    <tr>
 		      <td>Select File</td>
@@ -56,7 +56,7 @@
 		    </tr>
 		  </table>
 		</form>
-
+ -->
 
 </body>
 
