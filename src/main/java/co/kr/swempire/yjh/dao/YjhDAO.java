@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import co.kr.swempire.yjh.vo.UploadVO;
 import co.kr.swempire.yjh.vo.YjhVO;
 
 @Repository
@@ -28,4 +29,6 @@ public interface YjhDAO {
 	
 	
 	public Map<Object,Object> deleteData(YjhVO vo);
+	
+	public String uploadFile(UploadVO vo);
 }

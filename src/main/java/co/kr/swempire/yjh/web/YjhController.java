@@ -15,6 +15,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sun.istack.internal.logging.Logger;
 
 import co.kr.swempire.yjh.service.YjhService;
+import co.kr.swempire.yjh.vo.UploadVO;
 import co.kr.swempire.yjh.vo.YjhVO;
 
 @Controller
@@ -35,7 +37,7 @@ public class YjhController {
 
 	
 	private static final String FILE_SERVER_PATH = "D:/upload";
-	
+	private static final String FILE_SERVER_PATH1 = "D:/downloadFile";
 	
 	@Autowired
 	YjhService yjhService;
@@ -46,14 +48,21 @@ public class YjhController {
 		
 		return "index";
 	}
-	@RequestMapping("/fileupload")
-	public String flieupload(HttpServletRequest req) {
+	
+	@RequestMapping("/uploadfile")
+	public String upload(HttpServletRequest req) {
 		
-		return "fileupload";
+		return "uploadfile";
 	}
+	
+	
+	
+
+	
+	
 	@RequestMapping("/filedownload")
 	public String filedownload(HttpServletRequest req) {
-		
+
 		return "filedownload";
 	}
 	@RequestMapping("/readlist")

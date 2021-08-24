@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.kr.swempire.yjh.dao.YjhDAO;
+import co.kr.swempire.yjh.vo.UploadVO;
 import co.kr.swempire.yjh.vo.YjhVO;
 
 @Service
@@ -51,7 +52,9 @@ public class YjhService {
 	public Map<Object,Object> DeleteData(YjhVO vo){
 		return yjhDAO.deleteData(vo);
 	}
-	
+	public String uploadFile(UploadVO vo) {
+		return yjhDAO.uploadFile(vo);
+	}
 	
 
 }

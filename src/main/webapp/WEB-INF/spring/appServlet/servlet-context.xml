@@ -24,14 +24,14 @@
 	<context:component-scan base-package="co.kr.swempire" />
 	
 	<!--  spring-upload -->
-<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+<!-- <beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" /> -->
 <!--  spring-upload -->
 	
 	<!-- spring-donwload bean -->
 <beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
     <beans:property name="order" value="0" />
 </beans:bean>
-<beans:bean id="fileDownload" class="utils.fileDownload" />
+<beans:bean id="fileDownload" class="co.kr.swempire.yjh.web.fileDownload" />
 <!-- /spring-donwload bean -->
 
 <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -40,5 +40,12 @@
 	<beans:property name="suffix" value=".jsp" />
 	<beans:property name="order" value="1" />
 </beans:bean>
+<!-- 파일 업로드 설정 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 파일 사이즈 설정 가능 byte 단위
+		<property name="maxUploadSize" value="100000" />
+		-->
+	</beans:bean>
 	
 </beans:beans>

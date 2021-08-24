@@ -11,6 +11,8 @@ public class YjhVO {
 	String title;
 	String board_context;
 	Date to_date;
+	
+	
 	public String getUser_name() {
 		return user_name;
 	}
